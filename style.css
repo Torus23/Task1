@@ -1,0 +1,66 @@
+table,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+    
+}
+th{
+    background-color: rgb(51, 79, 235);
+    color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    transition: transform 250ms linear, opacity 400ms;
+}
+th:hover{
+    transform: scale(1.2);
+    opacity: 0;
+}
+table{
+    background-image: linear-gradient( #C1E1C1,#A7C7E7);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+td{
+    transition: 250ms ease-in;
+    color: red;
+}
+
+td:hover{
+    transform: scale(1.2);
+    opacity: 0;
+}
+
+h1{
+    text-align: center;
+    font-size: 2em;
+     }
+h1:hover{
+    animation-name: example;
+    animation-duration: 4s;
+    left: 0px;
+    top: 0px;
+}
+@keyframes example {
+    0%   {
+        color:black;
+        transform: translate(0px, 0px);
+    }
+    25%  {
+        color:yellow;
+        transform: translate(200px, 0px);
+    }
+    50%  {
+        color:blue;
+        transform: translate(200px, 200px);
+    }
+    75%  {
+        color:green;
+        transform: translate(0px, 200px);
+    }
+    100% {
+        color:black;
+        transform: translate(0px, 0px);
+    }
+  }
