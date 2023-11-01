@@ -39,7 +39,7 @@ include "../Include/Cart.php";
                         }
                     }
                 }
-                elseif(!$itemInCart) {
+                if(!$itemInCart) {
                     echo "<button class=\"cart-button\" onclick=\"document.location.href='./Handle/Handle_Add_Cart.php?prodID=$product->prodID&name=$product->name&specs=$product->specs&price=$product->price'\">Add To Cart</button>";
                 }
                 ?>
