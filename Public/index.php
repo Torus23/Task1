@@ -83,12 +83,12 @@ include "../Include/FilterProducts.php";
                 </div>
                 <div class="filter-item-content-item-grid">
                     <label class="text" for="MaxPrice">Max Price</label>
-                    <input class="price-range" type="range" name="MaxPrice" id="MaxPrice" step="10" min="30" max="10000" <?php if (isset($_GET["MaxPrice"])) {
+                    <input class="price-range" type="range" name="MaxPrice" id="MaxPrice" step="10" min="0" max="10000" <?php if (isset($_GET["MaxPrice"])) {
                                                                                                                             echo "value=\"" . $_GET["MaxPrice"] . "\"";
                                                                                                                         } else {
-                                                                                                                            echo "value=\"2000\"";
+                                                                                                                            echo "value=\"10000\"";
                                                                                                                         } ?> onchange="updateURL(this)" oninput="updatePriceIndicator(this)">
-                    <span id="MaxPrice-indicator" class="price text">$2000.00</span>
+                    <span id="MaxPrice-indicator" class="price text">$10000.00</span>
                 </div>
             </div>
         </form>
