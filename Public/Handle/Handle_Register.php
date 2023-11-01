@@ -20,8 +20,8 @@
     $password_hash = password_hash($password, PASSWORD_ARGON2I);
 
     $sql = "SELECT * FROM users WHERE email = ?";
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param('s', $email);
+    $stmt = mysqli_prepare($connection,$sql);
+    mysqli_stmt_bind_param($stmt,'s', $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -57,11 +57,11 @@
         }
 
         $sql = "INSERT INTO users (email, password, firstname, lastname, address, city, zipcode, country, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $connection->prepare($sql);
+        $stmt = mysqli_prepare($connection,$sql);
         if(!$stmt) {
-            die("Failed preparing SQL statment: " . $connection->error);
+            die("Failed preparing SQL statment: " . .mysqli_connect_error());
         }
-        $stmt->bind_param('ssssssiss', $email, $password_hash, $firstname, $lastname, $address, $city, $zipcode, $country, $phone);
+        mysqli_stmt_bind_param($stmt,'ssssssiss', $email, $password_hash, $firstname, $lastname, $address, $city, $zipcode, $country, $phone);
         $stmt->execute();
         header('Location: ../login.php');
     }
