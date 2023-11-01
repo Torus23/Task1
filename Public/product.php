@@ -9,7 +9,7 @@ include "../Include/Cart.php";
         <div class="images-grid">
             <div class="sub-images">
                 <div class="sub-image square-image-container">
-                    <img src="<?php echo "./Images/$product->prodID/". $product->prodID ."_1.jpg"?>" alt="Product Image">
+                    <img src="<?php echo "./Assets/Img/$product->prodID/". $product->prodID ."_1.jpg"?>" alt="Product Image">
                 </div>
                 <div class="sub-image square-image-container">
                     <img src="<?php echo "./Images/$product->prodID/". $product->prodID ."_2.jpg"?>" alt="Product Image">
