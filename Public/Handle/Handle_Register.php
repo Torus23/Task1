@@ -22,8 +22,9 @@
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = mysqli_prepare($connection,$sql);
     mysqli_stmt_bind_param($stmt,'s', $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
 
     if($result->fetch_assoc()){
         $_SESSION["email"] = $email;
@@ -62,7 +63,7 @@
             die("Failed preparing SQL statment: " . .mysqli_connect_error());
         }
         mysqli_stmt_bind_param($stmt,'ssssssiss', $email, $password_hash, $firstname, $lastname, $address, $city, $zipcode, $country, $phone);
-        $stmt->execute();
+        mysqli_stmt_execute($stmt);
         header('Location: ../login.php');
     }
 ?>
