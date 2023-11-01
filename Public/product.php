@@ -9,20 +9,20 @@ include "../Include/Cart.php";
         <div class="images-grid">
             <div class="sub-images">
                 <div class="sub-image square-image-container">
-                    <img src="<?php echo "./Assets/Img/$product->prodID/". $product->prodID ."1.jpg"?>" alt="Product Image">
+                    <img src="<?php echo "./Assets/Img/$product->prodID/1.jpg"?>" alt="Product Image">
                 </div>
                 <div class="sub-image square-image-container">
-                    <img src="<?php echo "./Images/$product->prodID/". $product->prodID ."2.jpg"?>" alt="Product Image">
+                    <img src="<?php echo "./Images/$product->prodID/2.jpg"?>" alt="Product Image">
                 </div>
                 <div class="sub-image square-image-container">
-                    <img src="<?php echo "./Images/$product->prodID/". $product->prodID ."3.jpg"?>" alt="Product Image">
+                    <img src="<?php echo "./Images/$product->prodID/3.jpg"?>" alt="Product Image">
                 </div>
                 <div class="sub-image square-image-container">
-                    <img src="<?php echo "./Images/$product->prodID/". $product->prodID ."4.jpg"?>" alt="Product Image">
+                    <img src="<?php echo "./Images/$product->prodID/4.jpg"?>" alt="Product Image">
                 </div>
             </div>
             <div class="main-image square-image-container">
-                <?php echo "<img src=\"./Images/" . $product->prodID . "/" . $product->prodID . ".jpg\" alt=\"" . $product->name . "\">"?>
+                <?php echo "<img src=\"./Images/" . $product->prodID . "/.jpg\" alt=\"" . $product->name . "\">"?>
             </div>
         </div>
         <div class="specs-and-buttons">
