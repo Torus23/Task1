@@ -14,7 +14,8 @@
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = mysqli_prepare($connection,$sql);
     mysqli_stmt_bind_param($stmt, "s", $email);    
-    $result = $stmt->get_result();
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
     if($row = $result->fetch_assoc()){
         $password_hash = $row["password"];
