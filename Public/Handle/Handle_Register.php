@@ -4,7 +4,10 @@
         die("This page does not accept get requests!!!");
     }
     require "../../dbconfig.php";
-    require "../../Include/Dbconnect.php";
+    $connection = mysqli_init();
+    mysqli_real_connect($connection,  $servername, $username, $password, $dbname,  $port);
+    if (mysqli_connect_errno()) {
+    die('Failed to connect to MySQL: '.mysqli_connect_error()); }
   
     $email = $_POST["email"];
     $password = $_POST["password"];
