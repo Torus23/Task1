@@ -1,1 +1,1 @@
-<?php header("Location: /Public/index.php"); ?>
+<?php header("Location: Public/index.php"); ?>
