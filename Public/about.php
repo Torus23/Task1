@@ -23,12 +23,12 @@ include "Layout/header.php";
 </main>
 <div class="quote-container">
     <span class="quote">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "I always maintaining the highest levels of customer satisfaction, service, and value."
     </span>
     <div class="author-image square-image-container">
         <img src="../Public/Images/logo.jpg" alt="LARK">
     </div>
-    <span class="author-name">John Smith, CTO at LARK Computing</span>
+    <span class="author-name">Lark Larkenson, Founder at LARK Technology</span>
 </div>
 <?php
 include "Layout/footer.php";
