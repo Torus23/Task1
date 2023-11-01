@@ -63,7 +63,7 @@
         $sql = "INSERT INTO users (email, password, firstname, lastname, address, city, zipcode, country, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($connection,$sql);
         if(!$stmt) {
-            die("Failed preparing SQL statment: " . .mysqli_connect_error());
+            die("Failed preparing SQL statment: " . mysqli_connect_error());
         }
         mysqli_stmt_bind_param($stmt,'ssssssiss', $email, $password_hash, $firstname, $lastname, $address, $city, $zipcode, $country, $phone);
         mysqli_stmt_execute($stmt);
