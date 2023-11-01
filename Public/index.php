@@ -74,7 +74,7 @@ include "../Include/FilterProducts.php";
             <div class="filter-item">
                 <div class="filter-item-content-item-grid">
                     <label class="text" for="MinPrice">Min Price</label>
-                    <input class="price-range" type="range" name="MinPrice" id="MinPrice" step="10" min="0" max="2000" <?php if (isset($_GET["MinPrice"])) {
+                    <input class="price-range" type="range" name="MinPrice" id="MinPrice" step="10" min="0" max="10000" <?php if (isset($_GET["MinPrice"])) {
                                                                                                                             echo "value=\"" . $_GET["MinPrice"] . "\"";
                                                                                                                         } else {
                                                                                                                             echo "value=\"0\"";
@@ -83,7 +83,7 @@ include "../Include/FilterProducts.php";
                 </div>
                 <div class="filter-item-content-item-grid">
                     <label class="text" for="MaxPrice">Max Price</label>
-                    <input class="price-range" type="range" name="MaxPrice" id="MaxPrice" step="10" min="30" max="2000" <?php if (isset($_GET["MaxPrice"])) {
+                    <input class="price-range" type="range" name="MaxPrice" id="MaxPrice" step="10" min="30" max="10000" <?php if (isset($_GET["MaxPrice"])) {
                                                                                                                             echo "value=\"" . $_GET["MaxPrice"] . "\"";
                                                                                                                         } else {
                                                                                                                             echo "value=\"2000\"";
