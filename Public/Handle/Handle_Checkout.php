@@ -5,9 +5,12 @@
     session_start();
 
     require "../../dbconfig.php";
-    require "../../Include/Dbconnect/php";
     include "../../Include/Cart.php";
     include "../../Include/User.php";
+    $connection = mysqli_init();
+    mysqli_real_connect($connection,  $servername, $username, $password, $dbname,  $port);
+    if (mysqli_connect_errno()) {
+    die('Failed to connect to MySQL: '.mysqli_connect_error()); }
 
     if(isset($_SESSION["user"])){
         $user = unserialize($_SESSION["user"]);
@@ -38,9 +41,10 @@
     $phone = $_POST["phone"];
     $total = $_SESSION["total"];
 
-    $sql = "INSERT INTO orders (userID, products, firstName, lastName, address, city, zip, country, phone, total) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    $stmt = mysqli_execute_query($connection,$sql);
+    $sql = "INSERT INTO orders (products, firstName, lastName, address, city, zip, country, phone, total) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = mysqli_prepare($connection,$sql);
+    mysqli_stmt_bind_param($stmt,'ssssssssid', $products, $firstName, $lastName, $address, $city, $zip, $country, $phone, $total);
+    mysqli_stmt_execute($stmt);
 
     unset($_SESSION["cart"]);
 
