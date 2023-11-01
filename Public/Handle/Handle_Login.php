@@ -4,20 +4,16 @@
         die("This page does not accept get requests!!!");
     }
     require "../../dbconfig.php";
+    require "../../Include/Dbconnect/php";
     include "../../Include/User.php";
-    $connection = new mysqli($servername, $username, $password, $dbname);
-    if($connection->connect_errno) {
-        die("Connection failed: " . $connection->connect_errno);
-    }
+   
 
     $email = $_POST["email"];
     $password = $_POST["password"];
 
     $sql = "SELECT * FROM users WHERE email = ?";
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param('s', $email);
-
-    $stmt->execute();
+    $stmt = mysqli_prepare($connection,$sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);    
     $result = $stmt->get_result();
 
     if($row = $result->fetch_assoc()){
