@@ -22,7 +22,7 @@ include "../Include/Cart.php";
                 </div>
             </div>
             <div class="main-image square-image-container">
-                <?php echo "<img src=\"./Images/" . $product->prodID . "/.jpg\" alt=\"" . $product->name . "\">"?>
+                <?php echo "<img src=\"./Images/" . $product->prodID . ".jpg" alt=\"" . $product->name . "\">"?>
             </div>
         </div>
         <div class="specs-and-buttons">
