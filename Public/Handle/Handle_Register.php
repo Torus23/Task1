@@ -26,7 +26,7 @@
     $result = mysqli_stmt_get_result($stmt);
 
 
-    if($result->fetch_assoc()){
+    if(mysqli_fetch_assoc($result)){
         $_SESSION["email"] = $email;
         $_SESSION["password"] = $password;
         $_SESSION["firstname"] = $firstname;
