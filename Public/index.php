@@ -99,7 +99,7 @@ include "../Include/FilterProducts.php";
         {
             foreach ($listProd as $item) {
                 echo "<div class=\"product-card\" onclick=\"document.location.href='product.php?product=" . $item->prodID . "'\">";
-                echo "<div class=\"product-card-image\"><img src=\"./Assets/Img/" . $item->prodID . "/" . $item->prodID . ".jpg\" alt=\"" . $item->name . "\"></div>";
+                echo "<div class=\"product-card-image\"><img src=\"./Assets/Img/" . $item->prodID . "/1.jpg\" alt=\"" . $item->name . "\"></div>";
                 echo "<div class=\"product-card-content\">";
                 echo "<div class=\"card-text\">";
                 echo "<div class=\"product-card-title\">" . $item->name . "</div>";
