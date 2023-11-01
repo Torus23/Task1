@@ -4,11 +4,8 @@
         die("This page does not accept get requests!!!");
     }
     require "../../dbconfig.php";
-    $connection = new mysqli($servername, $username, $password, $dbname);
-    if($connection->connect_errno) {
-        die("Connection failed: " . $connection->connect_errno);
-    }
-
+    require "../../Include/Dbconnect.php";
+  
     $email = $_POST["email"];
     $password = $_POST["password"];
     $firstname = $_POST["first-name"];
