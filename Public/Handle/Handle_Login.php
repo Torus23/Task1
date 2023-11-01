@@ -17,7 +17,7 @@
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
-    if($row = $result->fetch_assoc()){
+    if($row = mysqli_fetch_assoc($result)){
         $password_hash = $row["password"];
         if(password_verify($password, $password_hash)){
             $user = new User($row["userID"], $row["email"], $row["firstname"], $row["lastname"], $row["address"], $row["city"], $row["zipcode"], $row["country"], $row["phone"]);
