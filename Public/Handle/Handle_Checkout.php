@@ -5,11 +5,7 @@
     session_start();
 
     require "../../dbconfig.php";
-    $connection = new mysqli($servername, $username, $password, $dbname);
-    if($connection->connect_errno) {
-        die("Connection failed: " . $connection->connect_errno);
-    }
-
+    require "../../Include/Dbconnect/php";
     include "../../Include/Cart.php";
     include "../../Include/User.php";
 
@@ -44,10 +40,7 @@
 
     $sql = "INSERT INTO orders (userID, products, firstName, lastName, address, city, zip, country, phone, total) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param('ssssssssid', $userID, $products, $firstName, $lastName, $address, $city, $zip, $country, $phone, $total);
-
-    $stmt->execute();
+    $stmt = mysqli_execute_query($connection,$sql);
 
     unset($_SESSION["cart"]);
 
