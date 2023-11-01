@@ -12,7 +12,7 @@
                 foreach($cartList as $item) {
                     echo "<div class=\"cart-item\">";
                     echo "<div class=\"cart-item-image square-image-container\">";
-                    echo "<img src=\"Assets/Img/$item->prodID/$item->prodID.jpg\" alt=\"$item->name\"></div>";
+                    echo "<img src=\"Assets/Img/$item->prodID/1.jpg\" alt=\"$item->name\"></div>";
                     echo "<span class=\"cart-item-title text\">$item->name</span>";
                     echo "<span class=\"cart-item-price\">$$item->price</span>";
                     echo "<span class=\"cart-item-specs\">";
