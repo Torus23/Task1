@@ -2,6 +2,7 @@
     if($_SERVER["REQUEST_METHOD"] == "GET"){
         die("This page does not accept GET requests!!!");
     }
+    echo "Test";
     session_start();
 
     require "../../dbconfig.php";
