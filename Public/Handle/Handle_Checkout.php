@@ -31,7 +31,7 @@
     else {
         die("Cart not set!!!");
     }
-
+    die("Test");
     $firstName = $_POST["first-name"];
     $lastName = $_POST["last-name"];
     $address = $_POST["address"];
@@ -47,6 +47,5 @@
     mysqli_stmt_execute($stmt);
 
     unset($_SESSION["cart"]);
-    die("Test");
     header('Location: ../index.php');
 ?>
