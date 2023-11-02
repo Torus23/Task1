@@ -47,6 +47,6 @@
     mysqli_stmt_execute($stmt);
 
     unset($_SESSION["cart"]);
-
+    die("Test");
     header('Location: ../index.php');
 ?>
