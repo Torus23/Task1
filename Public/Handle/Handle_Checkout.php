@@ -31,7 +31,6 @@
     else {
         die("Cart not set!!!");
     }
-    die("Test");
     $firstName = $_POST["first-name"];
     $lastName = $_POST["last-name"];
     $address = $_POST["address"];
@@ -41,9 +40,9 @@
     $phone = $_POST["phone"];
     $total = $_SESSION["total"];
 
-    $sql = "INSERT INTO orders (products, firstName, lastName, address, city, zip, country, phone, total) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO orders (userID, products, firstName, lastName, address, city, zip, country, phone, total) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($connection,$sql);
-    mysqli_stmt_bind_param($stmt,'ssssssssid', $products, $firstName, $lastName, $address, $city, $zip, $country, $phone, $total);
+    mysqli_stmt_bind_param($stmt,'ssssssssid', $userID, $products, $firstName, $lastName, $address, $city, $zip, $country, $phone, $total);
     mysqli_stmt_execute($stmt);
 
     unset($_SESSION["cart"]);
