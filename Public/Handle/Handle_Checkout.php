@@ -40,7 +40,7 @@
     $phone = $_POST["phone"];
     $total = $_SESSION["total"];
 
-    $sql = "INSERT INTO orders (userID, products, firstName, lastName, address, city, zip, country, phone, total) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO orders (userID, products, firstName, lastName, address, city, zip, country, phone, total) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($connection,$sql);
     mysqli_stmt_bind_param($stmt,'ssssssssid', $userID, $products, $firstName, $lastName, $address, $city, $zip, $country, $phone, $total);
     mysqli_stmt_execute($stmt);
