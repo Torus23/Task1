@@ -1,7 +1,7 @@
 <?php
     require "../dbconfig.php";
     $connection = mysqli_init();
-    //mysqli_ssl_set($con,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+    mysqli_ssl_set($con,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
     mysqli_real_connect($connection,  $servername, $username, $password, $dbname,  $port);
     if (mysqli_connect_errno()) {
     die('Failed to connect to MySQL: '.mysqli_connect_error()); }
