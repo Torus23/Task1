@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'lark-lark'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0967745BC37443C5854AD497F13AE7B2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B6475EF6C558483B81D29223A1616FD1 }}
           package: .
